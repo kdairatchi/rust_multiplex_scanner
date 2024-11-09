@@ -1,11 +1,5 @@
 
 <!--<u>**The Modern Port Scanner.**</u>-->
-**Fast, smart, effective.**
-
-![Arch Linux package][badge-1] ![Built with Rust][badge-2] ![GitHub All Releases][badge-3] ![Crates.io][badge-4] ![Discord][badge-5] ![Actions][badge-6]
-
-</div>
-
 # 🤔 What is this?
 
 ![fast][speed-1]
