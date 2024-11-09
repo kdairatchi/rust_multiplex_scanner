@@ -1,0 +1,55 @@
+[package]
+name = "rust_multiplex_scanner"
+version = "1.0.0"
+authors = ["Cybersecurity Tool Builder <cybersec@toolbuilder.io>"]
+edition = "2021"
+description = "A high-performance, customizable scanner for network and service enumeration."
+homepage = "https://github.com/username/rust_multiplex_scanner"
+repository = "https://github.com/username/rust_multiplex_scanner"
+license = "MIT"
+keywords = ["network", "scanner", "security", "nmap"]
+categories = ["command-line-utilities"]
+readme = "README.md"
+exclude = [
+    ".github/*",
+    "docs/*",
+    "examples/*",
+    "tests/*",
+]
+
+[dependencies]
+tokio = { version = "1.28.0", features = ["full"] }
+tokio-rustls = "0.23.0"
+reqwest = { version = "0.11.14", features = ["rustls-tls"] }
+webpki-roots = "0.22.0"
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+clap = { version = "4.5.13", features = ["derive", "wrap_help"] }
+futures = "0.3"
+log = "0.4.22"
+env_logger = "0.11.5"
+itertools = "0.13.0"
+anyhow = "1.0.40"
+ansi_term = "0.12.1"
+
+[dev-dependencies]
+parameterized = "2.0.0"
+wait-timeout = "0.2.0"
+
+[package.metadata.deb]
+depends = "$auto, nmap"
+section = "network"
+
+[profile.release]
+lto = true
+panic = 'abort'
+strip = true
+codegen-units = 1
+
+# Enable additional lints and configurations for safer, more reliable code
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ["cfg(tarpaulin_include)"] }
+
+[[bin]]
+name = "rust_multiplex_scanner"
+path = "src/main.rs"
