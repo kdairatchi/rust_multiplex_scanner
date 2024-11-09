@@ -1,8 +1,3 @@
-<div align="center" markdown="1">
-
-➡️ [Discord][discord] | [Installation Guide][toc-install] | [Usage Guide][usage-guide] ⬅️
-
-<img src="pictures/rustscan.png" height=400px width=400px>
 
 <!--<u>**The Modern Port Scanner.**</u>-->
 **Fast, smart, effective.**
@@ -32,22 +27,10 @@ RustScan only officially supports Cargo installations, if you want to use that p
 - The usuals you would expect. IPv6, CIDR, file input and more.
 - Automatically pipes ports into Nmap.
 
-## ‼️ Important Links
 
-|         <!--Installation Guide-->          |          <!--Documentation-->          |       <!--Discord-->        |
-| :----------------------------------------: | :------------------------------------: | :-------------------------: |
-| :book: [Installation Guide][links-table-1] | :books: [Documentation][links-table-2] | :parrot: [Discord][discord] |
+# 🔭 Why This Rust Scan?
 
-## 🙋 Table of Contents
-
-- 📖 [Installation Guide][toc-install]
-- 🐋 [Docker Usage][toc-docker-usage]
-- 🦜 [Discord][discord]
-- 🤸 [Usage][usage-1]
-
-# 🔭 Why RustScan?
-
-RustScan is a modern take on the port scanner. Sleek & fast. All while providing extensive extendability to you.
+Rust Scan is a modern take on the port scanner. Sleek & fast. All while providing extensive extendability to you.
 
 Not to mention RustScan uses Adaptive Learning to improve itself over time, making it the best port scanner for **you**.
 
@@ -103,114 +86,93 @@ RustScan has continuous integration testing that aims to ensure it is accessible
 
 # 🤸 Usage
 
-We have 2 usage guides. [Basic Usage][usage-1] and [Things you may want to do][usage-2].
+Here's an updated usage guide for `rust_multiplex_scanner`, covering basic commands, advanced options, and practical examples to help users get started and leverage the scanner's full capabilities.
 
-We also have documentation about our config file [here][config-file-here].
+---
 
-# 🎪 Community
+# 🔧 Usage Guide for `rust_multiplex_scanner`
 
-[Contributing][community-1] Read this to learn how.
+## Basic Usage
 
-## Contributors ✨
+The simplest way to scan a host with specific ports:
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+```bash
+rust_multiplex_scanner -H example.com -p 80,443
+```
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-26-orange.svg?style=flat-square)](#contributors-)
+### Options:
 
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+- `-H`, `--host`: Specify the host or IP address to scan.
+- `-p`, `--ports`: Specify a single port (e.g., `80`) or a range (e.g., `1-1024`).
+- `-t`, `--timeout`: Set a timeout (in seconds) for each connection attempt (default: 5 seconds).
+- `-o`, `--output`: Choose the output format (`json`, `text`, `xml`).
+- `-v`, `--verbose`: Enable verbose output for detailed logging.
+- `--script`: Specify a custom script to run after scanning. Supports scripts in Python, Lua, and Shell.
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+## Advanced Usage Examples
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://skerritt.blog"><img src="https://avatars3.githubusercontent.com/u/10378052?v=4" width="100px;" alt=""/><br /><sub><b>Brandon</b></sub></a><br /><a href="#infra-brandonskerritt" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/RustScan/RustScan/commits?author=brandonskerritt" title="Tests">⚠️</a> <a href="https://github.com/RustScan/RustScan/commits?author=brandonskerritt" title="Code">💻</a> <a href="#design-brandonskerritt" title="Design">🎨</a></td>
-    <td align="center"><a href="https://sakiir.ovh"><img src="https://avatars1.githubusercontent.com/u/9950578?v=4" width="100px;" alt=""/><br /><sub><b>SakiiR</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/commits?author=SakiiR" title="Code">💻</a> <a href="https://github.com/RustScan/RustScan/issues?q=author%3ASakiiR" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://github.com/smackhack"><img src="https://avatars2.githubusercontent.com/u/48143394?v=4" width="100px;" alt=""/><br /><sub><b>smackhack</b></sub></a><br /><a href="#ideas-smackhack" title="Ideas, Planning, & Feedback">🤔</a> <a href="#example-smackhack" title="Examples">💡</a></td>
-    <td align="center"><a href="http://bernardoamc.github.io/"><img src="https://avatars0.githubusercontent.com/u/428984?v=4" width="100px;" alt=""/><br /><sub><b>Bernardo Araujo</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/commits?author=bernardoamc" title="Code">💻</a> <a href="https://github.com/RustScan/RustScan/issues?q=author%3Abernardoamc" title="Bug reports">🐛</a> <a href="#design-bernardoamc" title="Design">🎨</a></td>
-    <td align="center"><a href="https://github.com/Isona"><img src="https://avatars2.githubusercontent.com/u/11759523?v=4" width="100px;" alt=""/><br /><sub><b>Izzy Whistlecroft</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/issues?q=author%3AIsona" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://imlonghao.com"><img src="https://avatars1.githubusercontent.com/u/4951333?v=4" width="100px;" alt=""/><br /><sub><b>imlonghao</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/issues?q=author%3Aimlonghao" title="Bug reports">🐛</a> <a href="#maintenance-imlonghao" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/royharoush"><img src="https://avatars3.githubusercontent.com/u/8113056?v=4" width="100px;" alt=""/><br /><sub><b>royharoush</b></sub></a><br /><a href="#ideas-royharoush" title="Ideas, Planning, & Feedback">🤔</a> <a href="#design-royharoush" title="Design">🎨</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/Atul9"><img src="https://avatars1.githubusercontent.com/u/3390330?v=4" width="100px;" alt=""/><br /><sub><b>Atul Bhosale</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/commits?author=Atul9" title="Code">💻</a></td>
-    <td align="center"><a href="https://tgotwig.dev"><img src="https://avatars0.githubusercontent.com/u/30773779?v=4" width="100px;" alt=""/><br /><sub><b>Thomas Gotwig</b></sub></a><br /><a href="#platform-TGotwig" title="Packaging/porting to new platform">📦</a></td>
-    <td align="center"><a href="https://github.com/remigourdon"><img src="https://avatars3.githubusercontent.com/u/2874133?v=4" width="100px;" alt=""/><br /><sub><b>Rémi Gourdon</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/commits?author=remigourdon" title="Documentation">📖</a> <a href="https://github.com/RustScan/RustScan/commits?author=remigourdon" title="Code">💻</a></td>
-    <td align="center"><a href="https://cmnatic.co.uk"><img src="https://avatars3.githubusercontent.com/u/4163116?v=4" width="100px;" alt=""/><br /><sub><b>Ben (CMNatic)</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/commits?author=cmnatic" title="Code">💻</a> <a href="https://github.com/RustScan/RustScan/commits?author=cmnatic" title="Documentation">📖</a> <a href="#design-cmnatic" title="Design">🎨</a></td>
-    <td align="center"><a href="https://github.com/Ferryistaken"><img src="https://avatars3.githubusercontent.com/u/47927670?v=4" width="100px;" alt=""/><br /><sub><b>Alessandro Ferrari</b></sub></a><br /><a href="#content-Ferryistaken" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/Phenomite"><img src="https://avatars2.githubusercontent.com/u/8285537?v=4" width="100px;" alt=""/><br /><sub><b>Phenomite</b></sub></a><br /><a href="#content-Phenomite" title="Content">🖋</a></td>
-    <td align="center"><a href="https://supersandro.de/"><img src="https://avatars2.githubusercontent.com/u/7258858?v=4" width="100px;" alt=""/><br /><sub><b>Sandro</b></sub></a><br /><a href="#content-SuperSandro2000" title="Content">🖋</a> <a href="https://github.com/RustScan/RustScan/issues?q=author%3ASuperSandro2000" title="Bug reports">🐛</a> <a href="https://github.com/RustScan/RustScan/commits?author=SuperSandro2000" title="Code">💻</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://swag.lgbt"><img src="https://avatars2.githubusercontent.com/u/25358963?v=4" width="100px;" alt=""/><br /><sub><b>Cass</b></sub></a><br /><a href="#platform-caass" title="Packaging/porting to new platform">📦</a> <a href="https://github.com/RustScan/RustScan/commits?author=caass" title="Code">💻</a> <a href="https://github.com/RustScan/RustScan/issues?q=author%3Acaass" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://github.com/niklasmohrin"><img src="https://avatars0.githubusercontent.com/u/47574893?v=4" width="100px;" alt=""/><br /><sub><b>Niklas Mohrin</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/commits?author=niklasmohrin" title="Documentation">📖</a> <a href="https://github.com/RustScan/RustScan/commits?author=niklasmohrin" title="Code">💻</a> <a href="https://github.com/RustScan/RustScan/issues?q=author%3Aniklasmohrin" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://liberapay.com/Artem4/"><img src="https://avatars0.githubusercontent.com/u/5614476?v=4" width="100px;" alt=""/><br /><sub><b>Artem Polishchuk</b></sub></a><br /><a href="#platform-tim77" title="Packaging/porting to new platform">📦</a></td>
-    <td align="center"><a href="https://github.com/buermarc"><img src="https://avatars2.githubusercontent.com/u/44375277?v=4" width="100px;" alt=""/><br /><sub><b>buermarc</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/commits?author=buermarc" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/bergabman"><img src="https://avatars1.githubusercontent.com/u/44554109?v=4" width="100px;" alt=""/><br /><sub><b>bergabman</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/commits?author=bergabman" title="Code">💻</a> <a href="https://github.com/RustScan/RustScan/issues?q=author%3Abergabman" title="Bug reports">🐛</a> <a href="#design-bergabman" title="Design">🎨</a></td>
-    <td align="center"><a href="https://github.com/dmitris"><img src="https://avatars0.githubusercontent.com/u/31205?v=4" width="100px;" alt=""/><br /><sub><b>Dmitry Savintsev</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/commits?author=dmitris" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/bofh69"><img src="https://avatars3.githubusercontent.com/u/1444315?v=4" width="100px;" alt=""/><br /><sub><b>Sebastian Andersson</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/commits?author=bofh69" title="Code">💻</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/mattcorbin"><img src="https://avatars3.githubusercontent.com/u/6537765?v=4" width="100px;" alt=""/><br /><sub><b>Matt Corbin</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/commits?author=mattcorbin" title="Code">💻</a></td>
-    <td align="center"><a href="http://rootsploit.com"><img src="https://avatars2.githubusercontent.com/u/67270834?v=4" width="100px;" alt=""/><br /><sub><b>RootSploit</b></sub></a><br /><a href="#blog-rootsploit" title="Blogposts">📝</a></td>
-    <td align="center"><a href="https://github.com/eiffel-fl"><img src="https://avatars2.githubusercontent.com/u/12171754?v=4" width="100px;" alt=""/><br /><sub><b>eiffel-fl</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/commits?author=eiffel-fl" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/u5surf"><img src="https://avatars1.githubusercontent.com/u/14180225?v=4" width="100px;" alt=""/><br /><sub><b>Y.Horie</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/commits?author=u5surf" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/okrplay"><img src="https://avatars3.githubusercontent.com/u/32576280?v=4" width="100px;" alt=""/><br /><sub><b>Oskar</b></sub></a><br /><a href="https://github.com/RustScan/RustScan/commits?author=okrplay" title="Code">💻</a> <a href="https://github.com/RustScan/RustScan/commits?author=okrplay" title="Tests">⚠️</a></td>
-  </tr>
-</table>
+### 1. Scanning a Range of Ports
 
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
+To scan a range of ports (e.g., `1-1024`) on a host:
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+```bash
+rust_multiplex_scanner -H example.com -p 1-1024
+```
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+### 2. Increasing Timeout for Slow Connections
 
-<!--Links-->
+Some servers may respond slowly. Use `--timeout` to increase the connection attempt limit.
 
-[Docker]: https://hub.docker.com/r/cmnatic/rustscan "This is the recommended distribution of rustscan"
-[kali]: https://github.com/RustScan/RustScan/wiki/Installation-Guide#%EF%B8%8F-debian--kali "Read the install guide"
-[Kali/Debian]: https://github.com/RustScan/RustScan/releases "Kali Debian"
-[Arch-Linux]: https://archlinux.org/packages/extra/x86_64/rustscan/ "Arch Linux installation of Rustscan"
-[Homebrew]: https://formulae.brew.sh/formula/rustscan "Homebrew install of Rustscan"
-[usage-1]: https://github.com/RustScan/RustScan/wiki/Usage "Basic Usage of Rustscan"
-[usage-0]: https://github.com/RustScan/RustScan/wiki/Installation-Guide#docker-whale "Use Docker Rustscan"
-[config-file-here]: https://github.com/RustScan/RustScan/wiki/Config-File "RustScan Configuration File"
-[usage-2]: https://github.com/RustScan/RustScan/wiki/Things-you-may-want-to-do-with-RustScan-but-don't-understand-how "Things you may want to do with rustscan but don't know how"
-[community-1]: https://github.com/RustScan/RustScan/wiki/Contributing "Learn how to contribute"
-[distributions-1]: https://software.opensuse.org/package/rustscan?search_term=rustscan "Open Suse rustscan distribution"
-[distributions-2]: https://copr.fedorainfracloud.org/coprs/atim/rustscan/ "Rustscan in Fedora"
-[repology-1]: https://repology.org/project/rustscan/versions "Packaging Status"
-[install-1]: https://github.com/RustScan/RustScan/wiki/Installation-Guide "Installation guide"
-[accessible-2]: https://bees.substack.com/p/making-hacking-accessible "Making Hacking Accessible"
-[extensible-2]: https://github.com/RustScan/RustScan/wiki/RustScan-Scripting-Engine "Scripting Engine"
-[speed-2]: https://github.com/sharkdp/hyperfine "Hyperfine"
-[speed-3]: https://github.com/RustScan/RustScan/wiki/Increasing-Speed-&-Accuracy "Increasing Speed & Accuracy"
-[toc-community]: https://github.com/RustScan/RustScan#-community "Community"
-[links-table-1]: https://github.com/RustScan/RustScan#-full-installation-guide "Full installation guide"
-[links-table-2]: https://rustscan.github.io/RustScan/ "Rustscan"
-[discord]: http://discord.skerritt.blog "Discord blog"
-[toc-install]: https://github.com/RustScan/RustScan/wiki/Installation-Guide "Installation Guide Wiki"
-[toc-docker-usage]: https://github.com/RustScan/RustScan/wiki/Installation-Guide#docker- "Docker Installation Guide Wiki"
-[usage-guide]: https://github.com/RustScan/RustScan#-usage
-[adaptive-learning]: https://github.com/RustScan/RustScan/wiki/Adaptive-Learning "Adaptive Learning"
+```bash
+rust_multiplex_scanner -H example.com -p 22,80,443 --timeout 10
+```
 
-<!--Pictures-->
+### 3. Verbose Output for Debugging
 
-[DockerPic]: https://github.com/RustScan/RustScan/blob/master/pictures/docker.png?raw=true "Docker install"
-[Kali1]: https://github.com/RustScan/RustScan/blob/master/pictures/kali.png?raw=true "Kali Picture"
-[Arch]: https://github.com/RustScan/RustScan/blob/master/pictures/arch.png?raw=true "Arch Linux"
-[Apple]: https://raw.githubusercontent.com/RustScan/RustScan/master/pictures/apple.png?size "Apple"
-[rustscan-svg]: https://repology.org/badge/vertical-allrepos/rustscan.svg "Picture of rustscan repology"
-[accessible-1]: pictures/accessible.gif "Fast"
-[adaptive-1]: pictures/adaptive.gif "Adaptive"
-[extensible-1]: pictures/scripts.gif "Scripts"
-[speed-1]: pictures/fast.gif "Speed"
-[badge-1]: https://img.shields.io/archlinux/v/extra/x86_64/rustscan?style=plastic&logo=archlinux&link=https%3A%2F%2Farchlinux.org%2Fpackages%2Fextra%2Fx86_64%2Frustscan%2F
-[badge-2]: https://img.shields.io/badge/Built%20with-Rust-Purple
-[badge-3]: https://img.shields.io/github/downloads/rustscan/rustscan/total?label=GitHub%20Downloads
-[badge-4]: https://img.shields.io/crates/d/rustscan?label=Cargo%20Downloads
-[badge-5]: https://img.shields.io/discord/754001738184392704
-[badge-6]: https://github.com/RustScan/RustScan/workflows/Build/badge.svg?branch=master
+Verbose mode provides additional information useful for debugging.
+
+```bash
+rust_multiplex_scanner -H example.com -p 22,80,443 -v
+```
+
+### 4. JSON Output Format
+
+Save results in JSON format for easier parsing and integration with other tools.
+
+```bash
+rust_multiplex_scanner -H example.com -p 22,80,443 -o json
+```
+
+### 5. Running a Custom Script Post-Scan
+
+Run a custom script after the scan. This script will receive the scan results as input, allowing for additional processing.
+
+```bash
+rust_multiplex_scanner -H example.com -p 22,80,443 --script post_scan_analysis.py
+```
+
+## Docker Usage
+
+To run `rust_multiplex_scanner` in a Docker container:
+
+```bash
+docker run --rm -it username/rust_multiplex_scanner -H example.com -p 80,443
+```
+
+## Full Command Reference
+
+```bash
+rust_multiplex_scanner -H <host> -p <ports> [options]
+```
+
+| Option            | Description                                                             |
+|-------------------|-------------------------------------------------------------------------|
+| `-H`, `--host`    | Host or IP address to scan (required).                                 |
+| `-p`, `--ports`   | Port(s) or range to scan (e.g., `80`, `1-1024`).                       |
+| `-t`, `--timeout` | Timeout per connection attempt in seconds (default: `5`).              |
+| `-o`, `--output`  | Output format: `json`, `text`, or `xml`.                               |
+| `-v`, `--verbose` | Verbose mode for additional logging.                                   |
+| `--script`        | Specify a script to run post-scan (e.g., `post_scan_analysis.py`).     |
+
+---
+
